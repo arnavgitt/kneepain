@@ -3,376 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aditi Chauhan | Knee Pain Relief Program</title>
-    <!-- Tailwind CSS for rapid, clean styling similar to modern professional sites -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts: Poppins (Clean, Modern) & Playfair Display (Elegant, like The Coach) -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <title>Aditi Chauhan | 90 Days Knee Pain Relief Program</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom config for clean, professional colors --><script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-accent': '#008080', // Deep Teal/Cyan for authority and calm (like the reference site)
+                        'secondary-dark': '#2C3E50', // Strong Navy/Charcoal for text
+                        'neutral-white': '#FFFFFF',
+                        'neutral-light': '#F8F8F8', // Very light background sections
+                        'insta-pink': '#E1306C', // Specific color for Instagram link
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Merriweather', 'serif'], // Used for prominent headings
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            /* Color Palette inspired by Wellness + Professionalism */
-            --primary: #2C5F2D; /* Deep Yoga Green */
-            --secondary: #97BC62; /* Fresh Leaf */
-            --accent: #D4A373; /* Earthy Gold/Orange */
-            --dark: #1F2937;
-            --light: #FDFBF7; /* Warm Cream instead of Cold Grey */
-        }
-        
+        /* Apply custom font globally and ensure smooth scrolling */
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark);
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            background-color: #F8F8F8;
+            color: #2C3E50;
         }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Hero Image Overlay */
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544367563-12123d8965cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            /* Clean, focused image of Aditi teaching or meditating */
+            background-image: linear-gradient(to top, rgba(248, 248, 248, 0.9), rgba(255, 255, 255, 0.7)),
+                              url('https://images.unsplash.com/photo-1579546960767-1724458f0c29?q=80&w=2670&auto=format&fit=crop'); /* Placeholder for a bright, clean, professional image */
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
         }
-
-        /* Custom underline effect for headings */
-        .heading-underline {
-            position: relative;
-            display: inline-block;
+        .program-card {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
         }
-        .heading-underline::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -10px;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-
-        /* Card Hover Effects */
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        /* Button Styles */
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #1e4220;
+        .program-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
             transform: translateY(-2px);
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-[#FDFBF7]">
+<body>
 
-    <!-- NAVIGATION (Style: The Coach - Clean, White, Sticky) -->
-    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="text-2xl font-bold text-green-900 tracking-wider font-serif">
-                        The<span class="text-green-600">AditiYoga</span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-600 hover:text-green-700 font-medium transition">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-green-700 font-medium transition">About Me</a>
-                    <a href="#program" class="text-gray-600 hover:text-green-700 font-medium transition">The Program</a>
-                    <a href="#inclusions" class="text-gray-600 hover:text-green-700 font-medium transition">Inclusions</a>
-                    <a href="#contact" class="btn-primary px-6 py-2 rounded-full font-medium shadow-lg hover:shadow-xl">Join Now</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-gray-600 hover:text-green-700 focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+    <!-- Header & Navigation --><header class="sticky top-0 z-50 bg-neutral-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-bold text-primary-accent tracking-wide">TheAditiYoga</a>
+            <div class="hidden md:flex space-x-8 text-secondary-dark font-medium text-sm tracking-wide">
+                <a href="#about" class="hover:text-primary-accent transition duration-300">About Me</a>
+                <a href="#program" class="hover:text-primary-accent transition duration-300">The Program</a>
+                <a href="#inclusions" class="hover:text-primary-accent transition duration-300">What You Get</a>
+                <a href="#contact" class="hover:text-primary-accent transition duration-300 px-3 py-1 border-2 border-primary-accent rounded-md">Join Now</a>
             </div>
+            <!-- Mobile Menu Button --><button id="mobile-menu-button" class="md:hidden text-secondary-dark focus:outline-none p-2 rounded-md hover:bg-neutral-light">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Dropdown --><div id="mobile-menu" class="hidden md:hidden bg-neutral-white shadow-lg">
+            <a href="#about" class="block px-4 py-3 text-secondary-dark hover:bg-neutral-light">About Me</a>
+            <a href="#program" class="block px-4 py-3 text-secondary-dark hover:bg-neutral-light">The Program</a>
+            <a href="#inclusions" class="block px-4 py-3 text-secondary-dark hover:bg-neutral-light">What You Get</a>
+            <a href="#contact" class="block px-4 py-3 text-primary-accent font-semibold hover:bg-neutral-light">Join Now</a>
         </div>
+    </header>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Home</a>
-                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">About Me</a>
-                <a href="#program" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">The Program</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-bold text-green-700 hover:bg-gray-50">Join Now</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION (Style: High Impact, Emotional Connection) -->
-    <section id="home" class="hero-bg h-screen flex items-center justify-center text-center px-4 pt-20">
-        <div class="max-w-4xl mx-auto text-white">
-            <span class="uppercase tracking-widest text-sm md:text-base font-semibold text-green-200 mb-4 block animate-fade-in-up">90 Days Knee Pain Relief Program</span>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
-                Move With Confidence.<br>Live Without Pain.
+    <!-- Hero Section - High-Impact Program Focus --><section class="hero-bg min-h-[90vh] flex items-center justify-center text-center px-4 pt-20 pb-10">
+        <div class="relative z-10 max-w-4xl bg-neutral-white/80 p-8 md:p-12 rounded-lg shadow-2xl">
+            <p class="text-sm font-semibold text-primary-accent uppercase tracking-widest mb-4">Aditi Chauhan | Research-Backed Program</p>
+            <h1 class="text-5xl sm:text-7xl font-serif font-bold text-secondary-dark mb-6 leading-tight">
+                Move With Confidence. <br class="hidden sm:inline">Live Without Pain.
             </h1>
-            <p class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-light">
-                Join the research-backed program designed to build strong legs and bring you closer to 0% pain.
+            <p class="text-xl font-light text-secondary-dark/80 mb-10 max-w-2xl mx-auto">
+                Join the 90 Days Knee Pain Relief Program, designed to build strong legs and bring you closer to 0% pain using scientific yoga therapy.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#program" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg transition transform hover:-translate-y-1">
-                    Start Your Recovery
-                </a>
-                <a href="#about" class="bg-white hover:bg-gray-100 text-green-800 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition transform hover:-translate-y-1">
-                    Meet Aditi
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION (Style: Personal Brand, Trust-Building) -->
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <!-- Image Column -->
-                <div class="relative">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-green-100 rounded-full z-0"></div>
-                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-50 rounded-full z-0"></div>
-                    <!-- Aditi's Image 
-                         NOTE: This image will only load if 'WhatsApp Image 2025-11-24 at 22.26.06_f7316acd.jpg' is in the same folder. 
-                         I added an onerror fallback so it looks good in the preview too. -->
-                    <img src="assets/images/Agra 2.png" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1588286840104-44dadeb43d40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';"
-                         alt="Aditi Chauhan Yoga" 
-                         class="relative z-10 rounded-lg shadow-2xl w-full object-cover h-[500px]">
-                </div>
-
-                <!-- Content Column -->
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 heading-underline">Hi, I am Aditi Chauhan</h2>
-                    <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
-                        <p>
-                            I hold a <strong class="text-green-700">Masters in Yogic Sciences</strong>. During my extensive research phase, I developed the <strong class="text-gray-900">90 Days Knee Pain Relief Program</strong>.
-                        </p>
-                        <p>
-                            The results were mind-blowing. Countless individuals were positively affected, ending the program with significantly stronger legs and getting closer to <strong class="text-green-700">0% pain</strong>.
-                        </p>
-                        <p class="italic border-l-4 border-green-500 pl-4 py-2 bg-green-50 text-green-900">
-                            "My mission is to help you reclaim your lifestyle through science-backed yoga and therapy."
-                        </p>
-                    </div>
-                    <div class="mt-8 flex items-center space-x-4">
-                        <a href="https://www.instagram.com/theaditiyoga" target="_blank" class="flex items-center text-pink-600 font-bold hover:text-pink-700 transition">
-                            <i class="fab fa-instagram text-2xl mr-2"></i> Follow @theaditiyoga
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROBLEM / TARGET AUDIENCE (Style: Clear Diagnostics) -->
-    <section id="program" class="py-20 bg-[#F2F0E9]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Who Is This Program For?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Designed for anyone suffering from chronic or acute knee pain caused by:
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Condition 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-green-600">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
-                        <i class="fas fa-bone"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Knee Osteoarthritis</h3>
-                    <p class="text-gray-500 text-sm">Manage degenerative joint disease naturally.</p>
-                </div>
-
-                <!-- Condition 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-green-600">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Overuse of Knees</h3>
-                    <p class="text-gray-500 text-sm">Recovery for athletes and active individuals.</p>
-                </div>
-
-                <!-- Condition 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-green-600">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
-                        <i class="fas fa-user-injured"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Osteoporosis</h3>
-                    <p class="text-gray-500 text-sm">Strengthen bone density and joint support.</p>
-                </div>
-
-                <!-- Condition 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition text-center border-t-4 border-green-600">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600 text-2xl">
-                        <i class="fas fa-notes-medical"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Knee Effusion</h3>
-                    <p class="text-gray-500 text-sm">Reduce swelling and water on the knee.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INCLUSIONS SECTION (Style: The Offer) -->
-    <section id="inclusions" class="py-20 relative overflow-hidden">
-        <!-- Background decorative blob -->
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-green-50 rounded-full opacity-50 z-0"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-green-600 font-bold tracking-wider uppercase">What You Get</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Program Inclusions</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 2 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow border border-gray-100 flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center text-white text-xl">
-                        <i class="fas fa-spa"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-1">Meditation & Detox</h4>
-                        <p class="text-gray-500 text-sm">Free sessions to reduce stress and inflammation in the body.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow border border-gray-100 flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-orange-400 rounded-lg flex items-center justify-center text-white text-xl">
-                        <i class="fas fa-hands"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-1">Legs Massage Session</h4>
-                        <p class="text-gray-500 text-sm">Guided self-massage techniques for pain relief.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow border border-gray-100 flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center text-white text-xl">
-                        <i class="fas fa-carrot"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-1">Custom Diet Chart</h4>
-                        <p class="text-gray-500 text-sm">Nutritional plan tailored specifically to your body type.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow border border-gray-100 flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center text-white text-xl">
-                        <i class="fas fa-calendar-check"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-1">Weekly Challenges</h4>
-                        <p class="text-gray-500 text-sm">Interactive tasks to help you transform your lifestyle.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="feature-card bg-white p-6 rounded-lg shadow border border-gray-100 flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center text-white text-xl">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-1">6 Days App Plan</h4>
-                        <p class="text-gray-500 text-sm">Application-based guidance to keep you on track.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="mt-16 text-center">
-                <a href="#contact" class="inline-block bg-gray-900 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-green-800 transition shadow-xl">
-                    Yes, I Want Pain-Free Knees
-                </a>
-                <p class="mt-4 text-sm text-gray-500">Limited spots available for the next batch.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIAL/INSTAGRAM SECTION -->
-    <section class="py-20 bg-green-50">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-10 font-serif">Transformations from Instagram</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Insta Post 1 Placeholder -->
-                <div class="bg-white p-4 shadow-lg rounded-lg transform rotate-1">
-                    <div class="bg-gray-200 h-64 rounded mb-4 flex items-center justify-center text-gray-400">
-                        <i class="fab fa-instagram text-4xl"></i>
-                    </div>
-                    <p class="text-sm italic">"Aditi's program changed my life! No more knee pain while climbing stairs."</p>
-                </div>
-                <!-- Insta Post 2 Placeholder -->
-                <div class="bg-white p-4 shadow-lg rounded-lg transform -rotate-1">
-                    <div class="bg-gray-200 h-64 rounded mb-4 flex items-center justify-center text-gray-400">
-                        <i class="fab fa-instagram text-4xl"></i>
-                    </div>
-                    <p class="text-sm italic">"The strengthening exercises are simple yet so effective. Highly recommend!"</p>
-                </div>
-                <!-- Insta Post 3 Placeholder -->
-                <div class="bg-white p-4 shadow-lg rounded-lg transform rotate-1">
-                    <div class="bg-gray-200 h-64 rounded mb-4 flex items-center justify-center text-gray-400">
-                        <i class="fab fa-instagram text-4xl"></i>
-                    </div>
-                    <p class="text-sm italic">"Finally back to running after 2 years of struggle. Thank you Aditi!"</p>
-                </div>
-            </div>
-            <a href="https://www.instagram.com/theaditiyoga" target="_blank" class="inline-block mt-10 text-green-700 font-bold border-b-2 border-green-700 pb-1 hover:text-green-900">
-                See More on @theaditiyoga
+            <!-- Primary CTA --><a href="#program" class="inline-block px-10 py-4 text-lg font-bold bg-primary-accent text-neutral-white rounded-md hover:bg-secondary-dark transition duration-300 shadow-lg uppercase tracking-wider mr-4">
+                Start Your Recovery &rarr;
+            </a>
+            <!-- Secondary CTA --><a href="#about" class="inline-block px-10 py-4 text-lg font-bold border-2 border-secondary-dark text-secondary-dark rounded-md hover:bg-secondary-dark hover:text-neutral-white transition duration-300 uppercase tracking-wider mt-4 md:mt-0">
+                Meet Aditi
             </a>
         </div>
     </section>
 
-    <!-- CONTACT / FOOTER -->
-    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-                <div>
-                    <h3 class="text-2xl font-serif font-bold mb-4">TheAditiYoga</h3>
-                    <p class="text-gray-400 mb-6 max-w-sm">
-                        Masters in Yogic Sciences. Helping you heal naturally through movement and mindfulness.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube text-xl"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Get In Touch</h3>
-                    <form onsubmit="event.preventDefault(); document.getElementById('success-msg').classList.remove('hidden');" class="space-y-4">
-                        <div>
-                            <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 rounded bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-green-500" required>
-                        </div>
-                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded transition">
-                            Request Program Details
-                        </button>
-                        <p id="success-msg" class="hidden text-green-400 text-sm mt-2">Thanks! We'll be in touch shortly.</p>
-                    </form>
-                </div>
+    <!-- About Me Section --><section id="about" class="py-24 md:py-36 bg-neutral-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
+            <!-- Image (Placeholder for a professional photo) --><div class="md:order-2">
+                <img src="https://placehold.co/800x600/008080/FFFFFF?text=ADITI+CHAUHAN+YOGA" alt="Aditi Chauhan Yoga Instructor" class="w-full h-auto object-cover rounded-xl shadow-2xl border-4 border-primary-accent/10">
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-                <p>&copy; 2024 TheAditiYoga. All Rights Reserved.</p>
+            <!-- Text Content --><div class="md:order-1">
+                <h2 class="text-4xl font-serif font-bold text-secondary-dark mb-6">Hi, I am Aditi Chauhan</h2>
+                <p class="text-xl text-primary-accent mb-6 font-semibold">
+                    Masters in Yogic Sciences. Developer of the 90 Days Knee Pain Relief Program.
+                </p>
+                <p class="text-lg text-secondary-dark/80 mb-6 leading-relaxed">
+                    During my extensive research phase, I developed this unique, science-backed program. The results were mind-blowing: countless individuals positively affected, ending the program with significantly stronger legs and getting closer to **0% pain**.
+                </p>
+                <p class="text-lg text-secondary-dark/80 italic border-l-4 border-primary-accent pl-4 mb-8">
+                    "My mission is to help you reclaim your lifestyle through science-backed yoga and therapy."
+                </p>
+                <!-- Instagram Link, styled to match the image --><a href="https://www.instagram.com/theaditiyoga" target="_blank" class="inline-flex items-center text-insta-pink font-extrabold text-lg md:text-xl hover:opacity-80 transition duration-300">
+                    <svg aria-hidden="true" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                        <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+                    </svg>
+                    Follow @theaditiyoga
+                </a>
             </div>
         </div>
+    </section>
+
+    <!-- Program Overview / Who It's For Section --><section id="program" class="py-24 md:py-36 bg-neutral-white text-center">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-4xl font-serif font-bold text-secondary-dark mb-4">Who Is This Program For?</h2>
+            <p class="text-lg text-secondary-dark/70 mb-16 max-w-3xl mx-auto">
+                Designed for anyone suffering from chronic or acute knee pain caused by various common conditions.
+            </p>
+
+            <!-- Conditions Grid --><div class="grid md:grid-cols-4 gap-8">
+                <!-- Card 1 --><div class="program-card bg-neutral-white p-6 border-t-4 border-primary-accent">
+                    <h3 class="text-xl font-semibold text-secondary-dark mb-2">Knee Osteoarthritis</h3>
+                    <p class="text-sm text-secondary-dark/70">Manage degenerative joint disease naturally and effectively.</p>
+                </div>
+                <!-- Card 2 --><div class="program-card bg-neutral-white p-6 border-t-4 border-primary-accent">
+                    <h3 class="text-xl font-semibold text-secondary-dark mb-2">Overuse of Knees</h3>
+                    <p class="text-sm text-secondary-dark/70">Targeted recovery for athletes and active individuals with strain.</p>
+                </div>
+                <!-- Card 3 --><div class="program-card bg-neutral-white p-6 border-t-4 border-primary-accent">
+                    <h3 class="text-xl font-semibold text-secondary-dark mb-2">Osteoporosis</h3>
+                    <p class="text-sm text-secondary-dark/70">Strengthen bone density and build robust joint support.</p>
+                </div>
+                <!-- Card 4 --><div class="program-card bg-neutral-white p-6 border-t-4 border-primary-accent">
+                    <h3 class="text-xl font-semibold text-secondary-dark mb-2">Knee Effusion</h3>
+                    <p class="text-sm text-secondary-dark/70">Specific techniques to reduce swelling and water on the knee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Program Inclusions Section --><section id="inclusions" class="py-24 md:py-36 bg-neutral-light">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-secondary-dark mb-4">Program Inclusions</h2>
+                <p class="text-lg text-secondary-dark/70 max-w-2xl mx-auto">Everything you receive to support your 90-day journey to a pain-free life.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+                
+                <!-- Inclusion 1 --><div class="text-center bg-neutral-white p-6 rounded-md shadow-lg border-b-2 border-primary-accent lg:col-span-2">
+                    <span class="text-4xl text-primary-accent mb-2 block">🧘‍♀️</span>
+                    <h4 class="text-lg font-semibold mb-1">Meditation & Detox</h4>
+                    <p class="text-sm text-secondary-dark/70">Free sessions to reduce stress and inflammation in the body.</p>
+                </div>
+                
+                <!-- Inclusion 2 --><div class="text-center bg-neutral-white p-6 rounded-md shadow-lg border-b-2 border-primary-accent lg:col-span-2">
+                    <span class="text-4xl text-primary-accent mb-2 block">🦵</span>
+                    <h4 class="text-lg font-semibold mb-1">Legs Massage Session</h4>
+                    <p class="text-sm text-secondary-dark/70">Guided self-massage techniques for effective pain relief.</p>
+                </div>
+                
+                <!-- Inclusion 3 --><div class="text-center bg-neutral-white p-6 rounded-md shadow-lg border-b-2 border-primary-accent lg:col-span-2">
+                    <span class="text-4xl text-primary-accent mb-2 block">🍎</span>
+                    <h4 class="text-lg font-semibold mb-1">Custom Diet Chart</h4>
+                    <p class="text-sm text-secondary-dark/70">Nutritional plan tailored specifically to your body type and needs.</p>
+                </div>
+
+                <!-- Inclusion 4 --><div class="text-center bg-neutral-white p-6 rounded-md shadow-lg border-b-2 border-primary-accent lg:col-span-3">
+                    <span class="text-4xl text-primary-accent mb-2 block">🏆</span>
+                    <h4 class="text-lg font-semibold mb-1">Weekly Challenges</h4>
+                    <p class="text-sm text-secondary-dark/70">Interactive tasks to help you transform your lifestyle and habits.</p>
+                </div>
+
+                <!-- Inclusion 5 --><div class="text-center bg-neutral-white p-6 rounded-md shadow-lg border-b-2 border-primary-accent lg:col-span-3">
+                    <span class="text-4xl text-primary-accent mb-2 block">📱</span>
+                    <h4 class="text-lg font-semibold mb-1">6 Days App Plan</h4>
+                    <p class="text-sm text-secondary-dark/70">Application-based guidance and support to keep you on track daily.</p>
+                </div>
+
+            </div>
+            
+            <!-- Secondary CTA below inclusions --><div class="text-center mt-16">
+                <a href="#contact" class="inline-block px-12 py-5 text-xl font-bold bg-primary-accent text-neutral-white rounded-md hover:bg-secondary-dark transition duration-300 shadow-xl uppercase tracking-wider">
+                    Yes, I Want Pain-Free Knees &rarr;
+                </a>
+                <p class="mt-4 text-sm font-medium text-primary-accent">Limited spots available for the next batch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section --><section id="testimonials" class="py-24 md:py-36 bg-neutral-white text-center">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-4xl font-serif font-bold text-secondary-dark mb-10">Transformations from Instagram</h2>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Testimonial 1 --><div class="p-6 bg-neutral-light rounded-lg shadow-md border-l-4 border-primary-accent">
+                    <p class="italic text-secondary-dark/90 mb-4">"Aditi's program changed my life! No more knee pain while climbing stairs, and I feel so much stronger."</p>
+                    <p class="font-semibold text-sm text-primary-accent">- Happy Client A</p>
+                </div>
+                <!-- Testimonial 2 --><div class="p-6 bg-neutral-light rounded-lg shadow-md border-l-4 border-primary-accent">
+                    <p class="italic text-secondary-dark/90 mb-4">"The strengthening exercises are simple yet so effective. The constant support made a huge difference. Highly recommend!"</p>
+                    <p class="font-semibold text-sm text-primary-accent">- Satisfied User B</p>
+                </div>
+                <!-- Testimonial 3 --><div class="p-6 bg-neutral-light rounded-lg shadow-md border-l-4 border-primary-accent">
+                    <p class="italic text-secondary-dark/90 mb-4">"Finally back to running after 2 years of struggle. The custom diet chart was surprisingly helpful for reducing inflammation."</p>
+                    <p class="font-semibold text-sm text-primary-accent">- Wellness Journey C</p>
+                </div>
+            </div>
+            
+            <!-- Instagram Link, now without underline --><a href="https://www.instagram.com/theaditiyoga" target="_blank" class="mt-12 inline-flex items-center text-insta-pink font-semibold hover:text-secondary-dark transition duration-300">
+                 <!-- Using the same icon from the bio for visual consistency --><svg aria-hidden="true" class="w-6 h-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                    <line x1="17.5" x2="17.5" y1="6.5" y2="6.5"/>
+                </svg>
+                See More Results on @theaditiyoga
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact / Join Now Section --><section id="contact" class="py-20 md:py-32 bg-primary-accent text-neutral-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-serif font-bold mb-4 uppercase">Ready to Reclaim Your Mobility?</h2>
+            <p class="text-lg mb-12 opacity-80 max-w-xl mx-auto">
+                Request program details and secure your spot in the next 90-day batch.
+            </p>
+
+            <form class="bg-neutral-white p-8 rounded-lg shadow-2xl space-y-5 border-t-4 border-secondary-dark">
+                <input type="text" placeholder="Your Full Name" class="w-full p-4 rounded-md border border-primary-accent/20 focus:border-secondary-dark focus:ring-1 focus:ring-secondary-dark transition duration-300 text-secondary-dark" required>
+                <input type="email" placeholder="Your Email Address" class="w-full p-4 rounded-md border border-primary-accent/20 focus:border-secondary-dark focus:ring-1 focus:ring-secondary-dark transition duration-300 text-secondary-dark" required>
+                <button type="submit" class="w-full px-8 py-4 text-lg font-bold bg-secondary-dark text-neutral-white rounded-md hover:bg-primary-accent transition duration-300 shadow-lg uppercase tracking-widest">
+                    Request Program Details
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer --><footer class="bg-secondary-dark py-10 text-neutral-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2024 TheAditiYoga. All Rights Reserved. </p>
+            <p class="mt-2 text-primary-accent">Masters in Yogic Sciences. Helping you heal naturally.</p>
+        </div>
     </footer>
+
+    <!-- JavaScript for Mobile Menu --><script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.getElementById('mobile-menu').querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
 
 </body>
 </html>
