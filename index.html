@@ -25,6 +25,9 @@
         }
     </script>
     <style>
+        /* html {
+            scroll-behavior: smooth;
+        } */
         /* Apply custom font globally and ensure smooth scrolling */
         body {
             font-family: 'Inter', sans-serif;
@@ -34,8 +37,8 @@
         }
         .hero-bg {
             /* Clean, focused image of Aditi teaching or meditating */
-            background-image: linear-gradient(to top, rgba(248, 248, 248, 0.9), rgba(255, 255, 255, 0.7)),
-                              url("assets/images/main pic.jpg"); /* Placeholder for a bright, clean, professional image */
+            background-image: linear-gradient(to top, rgba(248, 248, 248, 0.1), rgba(255, 255, 255, 0.1)),
+                              url("assets/images/3.png"); /* Placeholder for a bright, clean, professional image */
             background-size: cover;
             background-position: center;
         }
@@ -55,22 +58,22 @@
 
     <!-- Header & Navigation --><header class="sticky top-0 z-50 bg-neutral-white shadow-sm">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold text-primary-accent tracking-wide">TheAditiYoga</a>
+            <a href="https://yogaditi.in" class="text-2xl font-serif font-bold text-primary-accent tracking-wide">TheAditiYoga</a>
             <div class="hidden md:flex space-x-8 text-secondary-dark font-medium text-sm tracking-wide">
-                <a href="#about" class="hover:text-primary-accent transition duration-300">About Me</a>
-                <a href="#program" class="hover:text-primary-accent transition duration-300">The Program</a>
-                <a href="#inclusions" class="hover:text-primary-accent transition duration-300">What You Get</a>
-                <a href="#contact" class="hover:text-primary-accent transition duration-300 px-3 py-1 border-2 border-primary-accent rounded-md">Join Now</a>
+                <a href="#about" class="scroll-link hover:text-primary-accent transition duration-300">About Me</a>
+                <a href="#program" class="scroll-link hover:text-primary-accent transition duration-300">The Program</a>
+                <a href="#inclusions" class="scroll-link hover:text-primary-accent transition duration-300">What You Get</a>
+                <a href="#contact" class="scroll-link hover:text-primary-accent transition duration-300 px-3 py-1 border-2 border-primary-accent rounded-md" style="margin-top:-5px;">Join Now</a>
             </div>
             <!-- Mobile Menu Button --><button id="mobile-menu-button" class="md:hidden text-secondary-dark focus:outline-none p-2 rounded-md hover:bg-neutral-light">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </nav>
         <!-- Mobile Menu Dropdown --><div id="mobile-menu" class="hidden md:hidden bg-neutral-white shadow-lg">
-            <a href="#about" class="block px-4 py-3 text-secondary-dark hover:bg-neutral-light">About Me</a>
-            <a href="#program" class="block px-4 py-3 text-secondary-dark hover:bg-neutral-light">The Program</a>
-            <a href="#inclusions" class="block px-4 py-3 text-secondary-dark hover:bg-neutral-light">What You Get</a>
-            <a href="#contact" class="block px-4 py-3 text-primary-accent font-semibold hover:bg-neutral-light">Join Now</a>
+            <a href="#about" class="scroll-link block px-4 py-3 text-secondary-dark hover:bg-neutral-light">About Me</a>
+            <a href="#program" class="scroll-link block px-4 py-3 text-secondary-dark hover:bg-neutral-light">The Program</a>
+            <a href="#inclusions" class="scroll-link block px-4 py-3 text-secondary-dark hover:bg-neutral-light">What You Get</a>
+            <a href="#contact" class="scroll-link block px-4 py-3 text-primary-accent font-semibold hover:bg-neutral-light">Join Now</a>
         </div>
     </header>
 
@@ -81,12 +84,12 @@
                 Move With Confidence. <br class="hidden sm:inline">Live Without Pain.
             </h1>
             <p class="text-xl font-light text-secondary-dark/80 mb-10 max-w-2xl mx-auto">
-                Join the 90 Days Knee Pain Relief Program, designed to build strong legs and bring you closer to 0% pain using scientific yoga therapy.
+                Join the 90 Days Knee Pain Relief Program, designed to build strong legs and bring you closer to <strong>0% PAIN</strong> using scientific yoga therapy.
             </p>
-            <!-- Primary CTA --><a href="#program" class="inline-block px-10 py-4 text-lg font-bold bg-primary-accent text-neutral-white rounded-md hover:bg-secondary-dark transition duration-300 shadow-lg uppercase tracking-wider mr-4">
+            <!-- Primary CTA --><a href="#program" class="scroll-link inline-block px-10 py-4 text-lg font-bold bg-primary-accent text-neutral-white rounded-md hover:bg-secondary-dark transition duration-300 shadow-lg uppercase tracking-wider mr-4">
                 Start Your Recovery &rarr;
             </a>
-            <!-- Secondary CTA --><a href="#about" class="inline-block px-10 py-4 text-lg font-bold border-2 border-secondary-dark text-secondary-dark rounded-md hover:bg-secondary-dark hover:text-neutral-white transition duration-300 uppercase tracking-wider mt-4 md:mt-0">
+            <!-- Secondary CTA --><a href="#about" class="scroll-link inline-block px-10 py-4 text-lg font-bold border-2 border-secondary-dark text-secondary-dark rounded-md hover:bg-secondary-dark hover:text-neutral-white transition duration-300 uppercase tracking-wider mt-4 md:mt-0">
                 Meet Aditi
             </a>
         </div>
@@ -100,10 +103,12 @@
             <!-- Text Content --><div class="md:order-1">
                 <h2 class="text-4xl font-serif font-bold text-secondary-dark mb-6">Hi, I am Aditi Chauhan</h2>
                 <p class="text-xl text-primary-accent mb-6 font-semibold">
-                    Masters in Yogic Sciences. Developer of the 90 Days Knee Pain Relief Program.
+                    Masters in Yogic Sciences. 
                 </p>
                 <p class="text-lg text-secondary-dark/80 mb-6 leading-relaxed">
-                    During my extensive research phase, I developed this unique, science-backed program. The results were mind-blowing: countless individuals positively affected, ending the program with significantly stronger legs and getting closer to **0% pain**.
+                    During my extensive research phase, I have developed this unique, science-backed programs for your knees and shoulders. I have personally dealth with these pains before so I know how it feels to work in pain, to live in pain but believe me <strong>You can get over them.</strong> in less time than you think. </p>
+                <p class="text-lg text-secondary-dark/80 mb-6 leading-relaxed">
+                    The results have been mind-blowing: countless individuals positively affected, ending the program with significantly stronger legs and shoulders, eventually getting closer to <strong>0% Pain.</strong>
                 </p>
                 <p class="text-lg text-secondary-dark/80 italic border-l-4 border-primary-accent pl-4 mb-8">
                     "My mission is to help you reclaim your lifestyle through science-backed yoga and therapy."
@@ -190,7 +195,7 @@
             </div>
             
             <!-- Secondary CTA below inclusions --><div class="text-center mt-16">
-                <a href="#contact" class="inline-block px-12 py-5 text-xl font-bold bg-primary-accent text-neutral-white rounded-md hover:bg-secondary-dark transition duration-300 shadow-xl uppercase tracking-wider">
+                <a href="#contact" class="scroll-link inline-block px-12 py-5 text-xl font-bold bg-primary-accent text-neutral-white rounded-md hover:bg-secondary-dark transition duration-300 shadow-xl uppercase tracking-wider">
                     Yes, I Want Pain-Free Knees &rarr;
                 </a>
                 <p class="mt-4 text-sm font-medium text-primary-accent">Limited spots available for the next batch.</p>
@@ -265,6 +270,8 @@
             });
         });
     </script>
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
