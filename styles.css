@@ -1,0 +1,231 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Teal Color Theme */
+:root {
+    --primary-teal: #008080;
+    --light-teal: #e0f2f1;
+    --white: #ffffff;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+    padding: 4rem 0;
+}
+
+.hero-image > div {
+    padding: 2rem;
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+/* Profile Card */
+.profile-card > div {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+    width: 100%;
+}
+
+/* Programs Section */
+.programs-section {
+    background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+}
+
+.program-card {
+    border-color: #e0f2f1 !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 128, 128, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Reviews Section */
+.review-card {
+    border-color: #e0f2f1 !important;
+    transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 128, 128, 0.15);
+}
+
+/* Demo Section */
+.demo-section {
+    background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+}
+
+.video-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0f2f1 0%, #80cbc4 100%);
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background-color: #008080;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-button:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+}
+
+.video-label {
+    font-size: 0.9rem;
+}
+
+/* Hover Effects */
+nav a:hover {
+    color: #008080 !important;
+}
+
+footer a:hover {
+    opacity: 0.7 !important;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Form Styling */
+.form-control:focus {
+    border-color: #008080 !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 128, 128, 0.25) !important;
+}
+
+/* Badge Styling */
+.badge {
+    font-weight: 500;
+}
+
+/* Card Hover Effects */
+.card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section,
+    .programs-section,
+    .demo-section {
+        padding: 3rem 0;
+    }
+
+    .hero-image > div {
+        aspect-ratio: 1/1;
+    }
+
+    .profile-card > div {
+        padding: 2rem 1.5rem;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .display-5 {
+        font-size: 2.5rem;
+    }
+
+    .display-6 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #008080;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #006666;
+}
+
+/* Utility Classes */
+.text-white-80 {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.bg-opacity-75 {
+    --bs-bg-opacity: 0.75;
+}
+
+/* Sticky Footer */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Button Styling */
+.btn-outline-dark:hover {
+    background-color: #e0f2f1;
+    border-color: #008080;
+    color: #008080;
+}
+
+/* Section Spacing */
+section {
+    padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 3rem 0;
+    }
+}
+
+/* Text Selection */
+::selection {
+    background-color: #008080;
+    color: white;
+}
+
+/* Focus States */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #008080;
+    outline-offset: 2px;
+}
