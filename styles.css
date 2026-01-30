@@ -24,6 +24,12 @@ body {
     padding: 4rem 0;
 }
 
+.hero-section1 {
+    background-image: url("assets/images/main\ pic.jpg");
+    backdrop-filter: blur(20px);
+    padding: 4rem 0;
+}
+
 .hero-image > div {
     padding: 2rem;
     width: 100%;
