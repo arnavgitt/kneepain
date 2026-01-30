@@ -1,22 +1,8 @@
 // Contact Form Handler
 document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Show success message
-            alert('Thank you for your message, ' + name + '! I will get back to you soon.');
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
+    
+    
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
