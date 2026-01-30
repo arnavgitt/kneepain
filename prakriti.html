@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vata Pitta Kapha Quiz</title>
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f7f9f6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .quiz-box {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .result-box {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 10px;
+      background: #e9f5ea;
+    }
+
+    .result-box h3 {
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-box">
+  <h1>Discover Your Body Type (Prakriti)</h1>
+
+  <form id="quizForm">
+
+    <!-- Q1 -->
+    <div class="question">
+      <p><strong>1. Your body frame is mostly:</strong></p>
+      <input type="radio" name="q1" value="vata"> Thin, light, narrow<br>
+      <input type="radio" name="q1" value="pitta"> Medium, well-built<br>
+      <input type="radio" name="q1" value="kapha"> Broad, solid, heavy
+    </div>
+
+    <!-- Q2 -->
+    <div class="question">
+      <p><strong>2. Your skin type:</strong></p>
+      <input type="radio" name="q2" value="vata"> Dry, rough, cool<br>
+      <input type="radio" name="q2" value="pitta"> Warm, oily, sensitive<br>
+      <input type="radio" name="q2" value="kapha"> Thick, oily, smooth
+    </div>
+
+    <!-- Q3 -->
+    <div class="question">
+      <p><strong>3. Digestion is usually:</strong></p>
+      <input type="radio" name="q3" value="vata"> Irregular, bloating common<br>
+      <input type="radio" name="q3" value="pitta"> Strong, sharp hunger<br>
+      <input type="radio" name="q3" value="kapha"> Slow but steady
+    </div>
+
+    <!-- Q4 -->
+    <div class="question">
+      <p><strong>4. Appetite pattern:</strong></p>
+      <input type="radio" name="q4" value="vata"> Variable, forget to eat<br>
+      <input type="radio" name="q4" value="pitta"> Cannot skip meals<br>
+      <input type="radio" name="q4" value="kapha"> Can skip meals easily
+    </div>
+
+    <!-- Q5 -->
+    <div class="question">
+      <p><strong>5. Energy levels:</strong></p>
+      <input type="radio" name="q5" value="vata"> Comes in bursts<br>
+      <input type="radio" name="q5" value="pitta"> Consistent and intense<br>
+      <input type="radio" name="q5" value="kapha"> Slow but long-lasting
+    </div>
+
+    <!-- Q6 -->
+    <div class="question">
+      <p><strong>6. Sleep quality:</strong></p>
+      <input type="radio" name="q6" value="vata"> Light, disturbed<br>
+      <input type="radio" name="q6" value="pitta"> Moderate, interrupted by thoughts<br>
+      <input type="radio" name="q6" value="kapha"> Deep and long
+    </div>
+
+    <!-- Q7 -->
+    <div class="question">
+      <p><strong>7. Climate preference:</strong></p>
+      <input type="radio" name="q7" value="vata"> Likes warmth<br>
+      <input type="radio" name="q7" value="pitta"> Likes cool weather<br>
+      <input type="radio" name="q7" value="kapha"> Comfortable in cold
+    </div>
+
+    <!-- Q8 -->
+    <div class="question">
+      <p><strong>8. Emotional nature:</strong></p>
+      <input type="radio" name="q8" value="vata"> Anxious, overthinking<br>
+      <input type="radio" name="q8" value="pitta"> Irritable, intense<br>
+      <input type="radio" name="q8" value="kapha"> Calm, attached
+    </div>
+
+    <!-- Q9 -->
+    <div class="question">
+      <p><strong>9. Weight changes:</strong></p>
+      <input type="radio" name="q9" value="vata"> Hard to gain weight<br>
+      <input type="radio" name="q9" value="pitta"> Gains & loses easily<br>
+      <input type="radio" name="q9" value="kapha"> Gains easily, loses slowly
+    </div>
+
+    <!-- Q10 -->
+    <div class="question">
+      <p><strong>10. Speech & movement:</strong></p>
+      <input type="radio" name="q10" value="vata"> Fast, irregular<br>
+      <input type="radio" name="q10" value="pitta"> Sharp, direct<br>
+      <input type="radio" name="q10" value="kapha"> Slow, thoughtful
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Get My Body Type</button>
+  </form>
+
+  <div class="result-box" id="resultBox">
+    <h3 id="resultTitle"></h3>
+    <p id="resultText"></p>
+  </div>
+</div>
+
+<script>
+  document.getElementById("quizForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let scores = { vata: 0, pitta: 0, kapha: 0 };
+
+    for (let i = 1; i <= 10; i++) {
+      let answer = document.querySelector(`input[name="q${i}"]:checked`);
+      if (answer) scores[answer.value]++;
+    }
+
+    let maxScore = Math.max(scores.vata, scores.pitta, scores.kapha);
+    let prakriti = Object.keys(scores).filter(key => scores[key] === maxScore);
+
+    let title = prakriti.join(" - ").toUpperCase() + " PRAKRITI";
+
+    let descriptions = {
+      vata: "You are creative, energetic, and quick-thinking but need grounding and routine.",
+      pitta: "You are focused, driven, and sharp but need cooling and balance.",
+      kapha: "You are calm, stable, and nurturing but need stimulation and movement."
+    };
+
+    let text = prakriti.map(p => descriptions[p]).join(" ");
+
+    document.getElementById("resultTitle").innerText = title;
+    document.getElementById("resultText").innerText = text;
+    document.getElementById("resultBox").style.display = "block";
+  });
+</script>
+
+</body>
+</html>

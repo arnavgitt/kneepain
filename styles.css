@@ -24,11 +24,62 @@ body {
     padding: 4rem 0;
 }
 
-.hero-section1 {
-    background-image: url("assets/images/main\ pic.jpg");
-    backdrop-filter: blur(20px);
-    padding: 4rem 0;
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+     .hero-section1 {
+        background-image: url("assets/images/main\ pic.jpg");
+        background-repeat: repeat;
+        padding: 4rem 0;
+    }
 }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+     .hero-section1 {
+        background-image: url("assets/images/main\ pic.jpg");
+        background-repeat: repeat;
+        padding: 4rem 0;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+     .hero-section1 {
+        background-image: url("assets/images/main\ pic.jpg");
+        background-repeat: repeat;
+        padding: 4rem 0;
+    }   
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .hero-section1 {
+        background-image: url("assets/images/main\ pic.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* background-attachment: fixed; */
+        backdrop-filter: blur(20px);
+        padding: 4rem 0;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .hero-section1 {
+        background-image: url("assets/images/main\ pic.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        /* background-attachment: fixed; */
+        backdrop-filter: blur(20px);
+        padding: 4rem 0;
+    }
+}
+
 
 .hero-image > div {
     padding: 2rem;
@@ -46,6 +97,10 @@ body {
 /* Programs Section */
 .programs-section {
     background: linear-gradient(180deg, #ffffff 0%, #f0fdfa 100%);
+}
+
+.programs-section1 {
+    background: white;
 }
 
 .program-card {
@@ -264,7 +319,7 @@ button:focus-visible {
 
 @media (max-width: 768px) {
     .pulse-btn {
-        animation: none;
+        /* animation: none; */
     }
 }
 
