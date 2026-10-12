@@ -1,0 +1,130 @@
+// Contact Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    
+    
+    
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add active state to navigation on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            
+            if (scrollY >= sectionTop - 100) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+});
+
+// Program page navigation
+function navigateToProgram(programPage) {
+    window.location.href = programPage;
+}
+
+// Video player placeholder (replace with actual video implementation)
+function playVideo(videoId) {
+    alert('Video player would open here. Video ID: ' + videoId);
+}
+
+// Enroll button handler
+function handleEnroll(programName, price) {
+    alert('Redirecting to checkout for: ' + programName + '\nPrice: ' + price);
+}
+
+// Watch review handler
+function watchReview(reviewerName, duration) {
+    alert('Opening review video for: ' + reviewerName + '\nDuration: ' + duration);
+}
+
+// Back to programs handler
+function backToPrograms() {
+    window.location.href = 'index.html#programs';
+}
+
+// Book consultation handler
+function bookConsultation() {
+    window.location.href = 'index.html#contact';
+}
+
+// Make functions available globally
+window.navigateToProgram = navigateToProgram;
+window.playVideo = playVideo;
+window.handleEnroll = handleEnroll;
+window.watchReview = watchReview;
+window.backToPrograms = backToPrograms;
+window.bookConsultation = bookConsultation;
+
+
+const reviewsSwiper = new Swiper(".reviewsSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 25,
+
+    // Automatic scrolling
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true
+    },
+
+    // Infinite loop when enough slides exist
+    loop: true,
+
+    // Smooth animation
+    speed: 700,
+
+    // Allow manual swiping
+    grabCursor: true,
+
+    // Pagination dots
+    pagination: {
+        el: ".reviewsSwiper .swiper-pagination",
+        clickable: true
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: ".review-next",
+        prevEl: ".review-prev"
+    },
+
+    // Responsive layout
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 25
+        },
+
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 28
+        }
+    }
+});
